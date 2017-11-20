@@ -2,7 +2,7 @@
 
 class Dictionary {
   constructor() {
-    this.map = {};
+    this.map = Object.create(null);
   }
   set(key, value) {
     return this.map[key] = value;
@@ -11,7 +11,7 @@ class Dictionary {
     return this.map[key];
   }
   has(key) {
-    return this.map.hasOwnProperty(key);
+    return !!this.map[key];
   }
   delete(key) {
     delete this.map[key];
@@ -23,7 +23,7 @@ class Dictionary {
     return Object.keys(this.map);
   }
   clear() {
-    this.map = {};
+    this.map = Object.create(null);
   }
 }
 

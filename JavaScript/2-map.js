@@ -18,4 +18,4 @@ if (!cityPopulation.has('Shanghai')) {
 }
 
 console.log('size:', cityPopulation.size);
-console.log('keys:', cityPopulation.keys());
+console.log('keys:', [...cityPopulation.keys()]);

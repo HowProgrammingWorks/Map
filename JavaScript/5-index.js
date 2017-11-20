@@ -20,8 +20,13 @@ const buildIndex = (ds, col) => {
 // Usage
 
 const dataset = getDataset('./cities.dat');
+console.log(dataset);
+
 const byName = buildIndex(dataset, 0);
+console.log(byName);
+
 const byPopulation = buildIndex(dataset, 1);
+console.log(byPopulation);
 
 const delhi = byName.get('Delhi');
 console.log(delhi);
