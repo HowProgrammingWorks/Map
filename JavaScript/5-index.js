@@ -19,7 +19,7 @@ const buildIndex = (ds, col) => {
 
 // Usage
 
-const dataset = getDataset('./cities.dat');
+const dataset = getDataset('./cities.csv');
 console.log(dataset);
 
 const byName = buildIndex(dataset, 0);
