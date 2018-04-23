@@ -10,6 +10,9 @@ cityPopulation.set('Lagos',    16060303);
 console.log('\nKeys');
 console.log(cityPopulation.keys());
 
+const keys = [...cityPopulation.keys()];
+console.log(keys);
+
 console.log('\nValues');
 console.log(cityPopulation.values());
 
