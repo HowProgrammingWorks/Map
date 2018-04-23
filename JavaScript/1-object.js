@@ -25,26 +25,44 @@ class Dictionary {
   clear() {
     this.map = Object.create(null);
   }
+  static from(hash) {
+    const instance = new Dictionary();
+    for (const key in hash) {
+      instance.set(key, hash[key]);
+    }
+    return instance;
+  }
 }
 
 // Usage
 
-const cityPopulation = new Dictionary();
+const cities = {
+  Shanghai: 24256800,
+  Beijing: 21516000,
+  Delhi: 16787941,
+  Lagos: 16060303
+};
 
-cityPopulation.set('Shanghai', 24256800);
-cityPopulation.set('Beijing',  21516000);
-cityPopulation.set('Delhi',    16787941);
-cityPopulation.set('Lagos',    16060303);
+const cityPopulation1 = Dictionary.from(cities);
+console.dir({ cityPopulation1 });
 
-cityPopulation.delete('Shanghai');
+const cityPopulation2 = new Dictionary();
+cityPopulation2.set('Shanghai', 24256800);
+cityPopulation2.set('Beijing',  21516000);
+cityPopulation2.set('Delhi',    16787941);
+cityPopulation2.set('Lagos',    16060303);
+console.dir({ cityPopulation2 });
 
-if (cityPopulation.has('Beijing')) {
-  console.log('Beijing:', cityPopulation.get('Beijing'));
+cityPopulation2.delete('Shanghai');
+console.dir({ cityPopulation2 });
+
+if (cityPopulation2.has('Beijing')) {
+  console.log('Beijing:', cityPopulation2.get('Beijing'));
 }
 
-if (!cityPopulation.has('Shanghai')) {
+if (!cityPopulation2.has('Shanghai')) {
   console.log('no data for Shanghai');
 }
 
-console.log('size:', cityPopulation.size);
-console.log('keys:', cityPopulation.keys());
+console.log('size:', cityPopulation2.size);
+console.log('keys:', cityPopulation2.keys());
