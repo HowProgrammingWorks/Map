@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-const getDataset = (file) => {
+const getDataset = file => {
   const lines = fs.readFileSync(file, 'utf8')
     .toString().split('\n');
   lines.shift();

@@ -40,7 +40,7 @@ const cities = {
   Shanghai: 24256800,
   Beijing: 21516000,
   Delhi: 16787941,
-  Lagos: 16060303
+  Lagos: 16060303,
 };
 
 const cityPopulation1 = Dictionary.from(cities);
