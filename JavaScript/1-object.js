@@ -11,7 +11,8 @@ class Dictionary {
     return this.map[key];
   }
   has(key) {
-    return !!this.map[key];
+    return Object.keys(this.map)
+      .includes(key);
   }
   delete(key) {
     delete this.map[key];
