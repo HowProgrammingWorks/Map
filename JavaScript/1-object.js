@@ -5,12 +5,14 @@ class Dictionary {
     this.map = Object.create(null);
   }
   set(key, value) {
-    return this.map[key] = value;
+    this.map[key] = value;
+    return this;
   }
   get(key) {
     return this.map[key];
   }
   has(key) {
+    // TODO: handel false, null, undefined, '', 0
     return !!this.map[key];
   }
   delete(key) {
