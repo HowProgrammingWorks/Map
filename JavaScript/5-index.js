@@ -2,11 +2,11 @@
 
 const fs = require('fs');
 
-const getDataset = file => {
+const getDataset = (file) => {
   const lines = fs.readFileSync(file, 'utf8').split('\n');
   lines.shift();
   lines.pop();
-  return lines.map(line => line.split(','));
+  return lines.map((line) => line.split(','));
 };
 
 const buildIndex = (ds, col) => {
